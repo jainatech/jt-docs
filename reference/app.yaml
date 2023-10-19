@@ -28,6 +28,13 @@ paths:
           application/json:
             schema:
               type: object
+              x-examples:
+                Example 1:
+                  version: 2.0.0
+                  changes:
+                    - Performance improvements & bug fixes
+                  ipa-url: 'itms-apps://apps.apple.com/in/app/pokerbaazi-online-poker/id1389802793'
+                  apk-url: 'https://mobile.alphabetabox.com/sources/staging-test/PokerBaazi-staging-test-3.10.50.apk'
               properties:
                 version:
                   type: string
@@ -39,13 +46,9 @@ paths:
                   type: string
                 apk-url:
                   type: string
-              x-examples:
-                Example 1:
-                  version: 2.0.0
-                  changes:
-                    - Performance improvements & bug fixes
-                  ipa-url: 'itms-apps://apps.apple.com/in/app/pokerbaazi-online-poker/id1389802793'
-                  apk-url: 'https://mobile.alphabetabox.com/sources/staging-test/PokerBaazi-staging-test-3.10.50.apk'
+              required:
+                - version
+                - changes
             examples:
               Example 1:
                 value:
@@ -263,19 +266,6 @@ paths:
           application/json:
             schema:
               type: array
-              items:
-                type: object
-                properties:
-                  version:
-                    type: string
-                  changes:
-                    type: array
-                    items:
-                      type: string
-                  ipa-url:
-                    type: string
-                  apk-url:
-                    type: string
               x-examples:
                 Example 1:
                   - version: 1.0.0
@@ -293,6 +283,22 @@ paths:
                       - Performance improvements & bug fixes
                     ipa-url: 'itms-apps://apps.apple.com/in/app/pokerbaazi-online-poker/id1389802793'
                     apk-url: 'https://mobile.alphabetabox.com/sources/staging-test/PokerBaazi-staging-test-3.10.50.apk'
+              items:
+                type: object
+                properties:
+                  version:
+                    type: string
+                  changes:
+                    type: array
+                    items:
+                      type: string
+                  ipa-url:
+                    type: string
+                  apk-url:
+                    type: string
+                required:
+                  - version
+                  - changes
             examples:
               Example 1:
                 value:
