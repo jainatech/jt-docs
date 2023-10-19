@@ -1,0 +1,788 @@
+{
+	"info": {
+		"_postman_id": "6f14618a-f427-4a87-81ac-2cce171ca277",
+		"name": "Admin APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30430242",
+		"_collection_link": "https://interstellar-meadow-183251.postman.co/workspace/Poker-Boss~8b9eb4e6-949d-49f1-8d9d-2e9d841d95d7/collection/4986656-6f14618a-f427-4a87-81ac-2cce171ca277?action=share&source=collection_link&creator=30430242"
+	},
+	"item": [
+		{
+			"name": "Admin Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" :\"salonisahu@pokerboss.dev\",\n    \"password\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/poker-boss-dev/us-central1/admin-login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"poker-boss-dev",
+						"us-central1",
+						"admin-login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Admin Login (Step 1)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" :\"salonisahu@pokerboss.dev\",\n    \"password\": \"goldtree9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/poker-boss-dev/us-central1/admin-login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"poker-boss-dev",
+								"us-central1",
+								"admin-login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "243"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"f3-BISONuvY0MoGJ2kqkOYovLm1kqc\""
+						},
+						{
+							"key": "date",
+							"value": "Fri, 06 Oct 2023 10:22:50 GMT"
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbG9uaXNhaHVAcG9rZXJib3NzLmRldiIsInR5cGUiOiJsb2dpbiIsImlhdCI6MTY5NjU4Nzc3MCwiZXhwIjoxNjk2Njc0MTcwfQ.5RfrhS9Rc0as_0FKq7KEEBv4Py0FYdzDnCGbOi6853Q\",\n    \"message\": \"Authentication required\"\n}"
+				},
+				{
+					"name": "Admin Login (Step 1)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" :\"salonisahu@pokerboss.dev\",\n    \"password\": \"wrongpassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/poker-boss-dev/us-central1/admin-login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"poker-boss-dev",
+								"us-central1",
+								"admin-login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "33"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"21-dBEoW0UmTF+EGUMaprEp9/8zNNA\""
+						},
+						{
+							"key": "date",
+							"value": "Fri, 06 Oct 2023 10:23:11 GMT"
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid credentials\"\n}"
+				},
+				{
+					"name": "Admin Login (Step 2)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tOtp\" : \"204143\",\n   \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbG9uaXNhaHVAcG9rZXJib3NzLmRldiIsInR5cGUiOiJsb2dpbiIsImlhdCI6MTY5NzAwNDU4NCwiZXhwIjoxNjk3MDkwOTg0fQ.Dnedt35Seuhp638oaM8CsLe4PyxHz0iEH-5RFIYnQl0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/poker-boss-dev/us-central1/admin-login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"poker-boss-dev",
+								"us-central1",
+								"admin-login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "244"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"f4-uHOiwEj44gbowi28ipUc+fripR4\""
+						},
+						{
+							"key": "date",
+							"value": "Wed, 11 Oct 2023 06:10:00 GMT"
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJEZjFGNVE1MWJHVmFPS3JqTzBjdnM0bkI5RXAxIiwidHlwZSI6ImF1dGgiLCJpYXQiOjE2OTcwMDQ1OTgsImV4cCI6MTY5NzA5MDk5OH0.jrBU97y_ZPyW5Vil8um7zvaVUpFE1ELOOPqETgGuaiY\",\n    \"message\": \"Verification successful\"\n}"
+				},
+				{
+					"name": "Admin Login (Step 2)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tOtp\" : \"204148\",\n   \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbG9uaXNhaHVAcG9rZXJib3NzLmRldiIsInR5cGUiOiJsb2dpbiIsImlhdCI6MTY5NzAwNDU4NCwiZXhwIjoxNjk3MDkwOTg0fQ.Dnedt35Seuhp638oaM8CsLe4PyxHz0iEH-5RFIYnQl0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/poker-boss-dev/us-central1/admin-login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"poker-boss-dev",
+								"us-central1",
+								"admin-login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "26"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"1a-J1Gtv2wfejjscKg7DxmlMGP7uNc\""
+						},
+						{
+							"key": "date",
+							"value": "Wed, 11 Oct 2023 06:10:27 GMT"
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid totp\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Admin Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"testtwo@pokerboss.dev\",\n    \"password\" : \"newPassword1\",\n    \"confirmPassword\" : \"newPassword1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/poker-boss-dev/us-central1/admin-register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"poker-boss-dev",
+						"us-central1",
+						"admin-register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Admin Register (Step 1)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"testtwo@pokerboss.dev\",\n    \"password\" : \"newPassword1\",\n    \"confirmPassword\" : \"newPassword1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/poker-boss-dev/us-central1/admin-register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"poker-boss-dev",
+								"us-central1",
+								"admin-register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "502"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"1f6-UiExpMcuOrUgHN8PAL63B3sJvdw\""
+						},
+						{
+							"key": "date",
+							"value": "Wed, 11 Oct 2023 06:15:27 GMT"
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R0d29AcG9rZXJib3NzLmRldiIsInBhc3N3b3JkIjoibmV3UGFzc3dvcmQxIiwic2VjcmV0S2V5IjoiRVJaR1EyWkRKQTdYT1ZLSktJNFRBUFRYSDVaVDRQQzNKNFlWR0wzWUtBU1Q2MkNHSk4zQSIsInR5cGUiOiJyZWdpc3RlciIsImlzRW1haWxWZXJpZmllZCI6ZmFsc2UsIm90cCI6IiQyYSQxMCRQdERUcDFMbnE3MEpybUs1OVIyQVlPYmpPeW1nYVlFRGhBZzBDRUpSRVVzQXpPU2duVmNqZSIsImlhdCI6MTY5NzAwNDkyNywiZXhwIjoxNjk3MDkxMzI3fQ.CspgckKaOO_F0V4b-o5KaW-c9Iwcd7owseiUnydqkwE\",\n    \"message\": \"An OTP has been sent to your email\"\n}"
+				},
+				{
+					"name": "Admin Register (Step 2)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R0d29AcG9rZXJib3NzLmRldiIsInBhc3N3b3JkIjoibmV3UGFzc3dvcmQxIiwic2VjcmV0S2V5IjoiRVJaR1EyWkRKQTdYT1ZLSktJNFRBUFRYSDVaVDRQQzNKNFlWR0wzWUtBU1Q2MkNHSk4zQSIsInR5cGUiOiJyZWdpc3RlciIsImlzRW1haWxWZXJpZmllZCI6ZmFsc2UsIm90cCI6IiQyYSQxMCRQdERUcDFMbnE3MEpybUs1OVIyQVlPYmpPeW1nYVlFRGhBZzBDRUpSRVVzQXpPU2duVmNqZSIsImlhdCI6MTY5NzAwNDkyNywiZXhwIjoxNjk3MDkxMzI3fQ.CspgckKaOO_F0V4b-o5KaW-c9Iwcd7owseiUnydqkwE\",\n    \"emailOtp\" : \"123456\"\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/poker-boss-dev/us-central1/admin-register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"poker-boss-dev",
+								"us-central1",
+								"admin-register"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "25"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"19-NnQ4POa1ykU2rVApv9D9PWOJNws\""
+						},
+						{
+							"key": "date",
+							"value": "Wed, 11 Oct 2023 06:18:18 GMT"
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid OTP\"\n}"
+				},
+				{
+					"name": "Admin Register (Step 3)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\" : \"\",\n    \"tOtp\" : \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/poker-boss-dev/us-central1/admin-register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"poker-boss-dev",
+								"us-central1",
+								"admin-register"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Admin Reset Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"saloni@pokerboss.dev\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/poker-boss-dev/us-central1/admin-resetPassword",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"poker-boss-dev",
+						"us-central1",
+						"admin-resetPassword"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Admin Reset Password (Step 1)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"saloni@pokerboss.dev\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/poker-boss-dev/us-central1/admin-resetPassword",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"poker-boss-dev",
+								"us-central1",
+								"admin-resetPassword"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "367"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"16f-59CN7ccn0UdHolYXoFjstH/xUyQ\""
+						},
+						{
+							"key": "date",
+							"value": "Wed, 11 Oct 2023 06:38:47 GMT"
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJUU2laT2hzQmJOUU1Fd21RRmhISFUzc3g2bTcyIiwidHlwZSI6InJlc2V0LXRva2VuIiwib3RwIjoiJDJhJDEwJG00b01MelVPd29hcnd5Q0ZYZEJNSy5Kbk1OQzFDb2VVY0ZrZEpRanVOTkhMVHBFa0lNVVJHIiwiaWF0IjoxNjk3MDA2MzI3LCJleHAiOjE2OTcwOTI3Mjd9.F4Upr2kSS3vtbakfrPdUwH3qpoYbrg4619Me4GqKpMs\",\n    \"message\": \"An OTP has been sent to your registered email\"\n}"
+				},
+				{
+					"name": "Admin Reset Password (Step 2)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"emailOtp\" : \"123456\", \n    \"token\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJUU2laT2hzQmJOUU1Fd21RRmhISFUzc3g2bTcyIiwidHlwZSI6InJlc2V0LXRva2VuIiwib3RwIjoiJDJhJDEwJG00b01MelVPd29hcnd5Q0ZYZEJNSy5Kbk1OQzFDb2VVY0ZrZEpRanVOTkhMVHBFa0lNVVJHIiwiaWF0IjoxNjk3MDA2MzI3LCJleHAiOjE2OTcwOTI3Mjd9.F4Upr2kSS3vtbakfrPdUwH3qpoYbrg4619Me4GqKpMs\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/poker-boss-dev/us-central1/admin-resetPassword",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"poker-boss-dev",
+								"us-central1",
+								"admin-resetPassword"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "25"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"19-NnQ4POa1ykU2rVApv9D9PWOJNws\""
+						},
+						{
+							"key": "date",
+							"value": "Wed, 11 Oct 2023 06:41:42 GMT"
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid OTP\"\n}"
+				},
+				{
+					"name": "Admin Reset Password (Step 3)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newPassword\" : \"newPassword1\",\n    \"confirmPassword\" : \"newPassword1\",\n    \"token\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJUU2laT2hzQmJOUU1Fd21RRmhISFUzc3g2bTcyIiwidHlwZSI6InJlc2V0LXRva2VuIiwib3RwIjoiJDJhJDEwJG00b01MelVPd29hcnd5Q0ZYZEJNSy5Kbk1OQzFDb2VVY0ZrZEpRanVOTkhMVHBFa0lNVVJHIiwiaWF0IjoxNjk3MDA2MzI3LCJleHAiOjE2OTcwOTI3Mjd9.F4Upr2kSS3vtbakfrPdUwH3qpoYbrg4619Me4GqKpMs\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5001/poker-boss-dev/us-central1/admin-resetPassword",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5001",
+							"path": [
+								"poker-boss-dev",
+								"us-central1",
+								"admin-resetPassword"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "47"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"2f-sD4mDG7UZcTotgEkHsMcDJ2l8t0\""
+						},
+						{
+							"key": "date",
+							"value": "Wed, 11 Oct 2023 06:45:44 GMT"
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "keep-alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"New password created successfully\"\n}"
+				}
+			]
+		}
+	]
+}

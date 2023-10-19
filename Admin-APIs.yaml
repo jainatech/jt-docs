@@ -1,0 +1,331 @@
+openapi: 3.0.0
+info:
+  title: Admin APIs
+  version: 1.0.0
+servers:
+  - url: http://127.0.0.1:5001
+paths:
+  /poker-boss-dev/us-central1/admin-login:
+    post:
+      tags:
+        - default
+      summary: Admin Login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: salonisahu@pokerboss.dev
+                password: ''
+      responses:
+        '200':
+          description: OK
+          headers:
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            vary:
+              schema:
+                type: string
+                example: Origin
+            content-type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            content-length:
+              schema:
+                type: integer
+                example: 243
+            etag:
+              schema:
+                type: string
+                example: W/"f3-BISONuvY0MoGJ2kqkOYovLm1kqc"
+            date:
+              schema:
+                type: string
+                example: Fri, 06 Oct 2023 10:22:50 GMT
+            connection:
+              schema:
+                type: string
+                example: keep-alive
+            keep-alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                example-0:
+                  summary: Admin Login (Step 1)
+                  value:
+                    token: >-
+                      eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbG9uaXNhaHVAcG9rZXJib3NzLmRldiIsInR5cGUiOiJsb2dpbiIsImlhdCI6MTY5NjU4Nzc3MCwiZXhwIjoxNjk2Njc0MTcwfQ.5RfrhS9Rc0as_0FKq7KEEBv4Py0FYdzDnCGbOi6853Q
+                    message: Authentication required
+                example-1:
+                  summary: Admin Login (Step 2)
+                  value:
+                    token: >-
+                      eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJEZjFGNVE1MWJHVmFPS3JqTzBjdnM0bkI5RXAxIiwidHlwZSI6ImF1dGgiLCJpYXQiOjE2OTcwMDQ1OTgsImV4cCI6MTY5NzA5MDk5OH0.jrBU97y_ZPyW5Vil8um7zvaVUpFE1ELOOPqETgGuaiY
+                    message: Verification successful
+        '400':
+          description: Bad Request
+          headers:
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            vary:
+              schema:
+                type: string
+                example: Origin
+            content-type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            content-length:
+              schema:
+                type: integer
+                example: 33
+            etag:
+              schema:
+                type: string
+                example: W/"21-dBEoW0UmTF+EGUMaprEp9/8zNNA"
+            date:
+              schema:
+                type: string
+                example: Fri, 06 Oct 2023 10:23:11 GMT
+            connection:
+              schema:
+                type: string
+                example: keep-alive
+            keep-alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                example-0:
+                  summary: Admin Login (Step 1)
+                  value:
+                    message: Invalid credentials
+                example-1:
+                  summary: Admin Login (Step 2)
+                  value:
+                    message: Invalid totp
+  /poker-boss-dev/us-central1/admin-register:
+    post:
+      tags:
+        - default
+      summary: Admin Register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: testtwo@pokerboss.dev
+                password: newPassword1
+                confirmPassword: newPassword1
+      responses:
+        '200':
+          description: OK
+          headers:
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            vary:
+              schema:
+                type: string
+                example: Origin
+            content-type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            content-length:
+              schema:
+                type: integer
+                example: 502
+            etag:
+              schema:
+                type: string
+                example: W/"1f6-UiExpMcuOrUgHN8PAL63B3sJvdw"
+            date:
+              schema:
+                type: string
+                example: Wed, 11 Oct 2023 06:15:27 GMT
+            connection:
+              schema:
+                type: string
+                example: keep-alive
+            keep-alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                token: >-
+                  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3R0d29AcG9rZXJib3NzLmRldiIsInBhc3N3b3JkIjoibmV3UGFzc3dvcmQxIiwic2VjcmV0S2V5IjoiRVJaR1EyWkRKQTdYT1ZLSktJNFRBUFRYSDVaVDRQQzNKNFlWR0wzWUtBU1Q2MkNHSk4zQSIsInR5cGUiOiJyZWdpc3RlciIsImlzRW1haWxWZXJpZmllZCI6ZmFsc2UsIm90cCI6IiQyYSQxMCRQdERUcDFMbnE3MEpybUs1OVIyQVlPYmpPeW1nYVlFRGhBZzBDRUpSRVVzQXpPU2duVmNqZSIsImlhdCI6MTY5NzAwNDkyNywiZXhwIjoxNjk3MDkxMzI3fQ.CspgckKaOO_F0V4b-o5KaW-c9Iwcd7owseiUnydqkwE
+                message: An OTP has been sent to your email
+        '401':
+          description: Unauthorized
+          headers:
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            vary:
+              schema:
+                type: string
+                example: Origin
+            content-type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            content-length:
+              schema:
+                type: integer
+                example: 25
+            etag:
+              schema:
+                type: string
+                example: W/"19-NnQ4POa1ykU2rVApv9D9PWOJNws"
+            date:
+              schema:
+                type: string
+                example: Wed, 11 Oct 2023 06:18:18 GMT
+            connection:
+              schema:
+                type: string
+                example: keep-alive
+            keep-alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Invalid OTP
+        '500':
+          description: Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ""
+  /poker-boss-dev/us-central1/admin-resetPassword:
+    post:
+      tags:
+        - default
+      summary: Admin Reset Password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: saloni@pokerboss.dev
+      responses:
+        '200':
+          description: OK
+          headers:
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            vary:
+              schema:
+                type: string
+                example: Origin
+            content-type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            content-length:
+              schema:
+                type: integer
+                example: 367
+            etag:
+              schema:
+                type: string
+                example: W/"16f-59CN7ccn0UdHolYXoFjstH/xUyQ"
+            date:
+              schema:
+                type: string
+                example: Wed, 11 Oct 2023 06:38:47 GMT
+            connection:
+              schema:
+                type: string
+                example: keep-alive
+            keep-alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                example-0:
+                  summary: Admin Reset Password (Step 1)
+                  value:
+                    token: >-
+                      eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJUU2laT2hzQmJOUU1Fd21RRmhISFUzc3g2bTcyIiwidHlwZSI6InJlc2V0LXRva2VuIiwib3RwIjoiJDJhJDEwJG00b01MelVPd29hcnd5Q0ZYZEJNSy5Kbk1OQzFDb2VVY0ZrZEpRanVOTkhMVHBFa0lNVVJHIiwiaWF0IjoxNjk3MDA2MzI3LCJleHAiOjE2OTcwOTI3Mjd9.F4Upr2kSS3vtbakfrPdUwH3qpoYbrg4619Me4GqKpMs
+                    message: An OTP has been sent to your registered email
+                example-1:
+                  summary: Admin Reset Password (Step 3)
+                  value:
+                    message: New password created successfully
+        '401':
+          description: Unauthorized
+          headers:
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            vary:
+              schema:
+                type: string
+                example: Origin
+            content-type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            content-length:
+              schema:
+                type: integer
+                example: 25
+            etag:
+              schema:
+                type: string
+                example: W/"19-NnQ4POa1ykU2rVApv9D9PWOJNws"
+            date:
+              schema:
+                type: string
+                example: Wed, 11 Oct 2023 06:41:42 GMT
+            connection:
+              schema:
+                type: string
+                example: keep-alive
+            keep-alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Invalid OTP
