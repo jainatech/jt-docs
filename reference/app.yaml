@@ -13,7 +13,7 @@ paths:
       operationId: post-app-deploy
       responses:
         '200':
-          $ref: '#/components/responses/app-deploy-200'
+          description: OK
       x-stoplight:
         id: jed7lvwv5f9ge
       parameters:
