@@ -88,6 +88,63 @@ paths:
                 $ref: '#/components/schemas/Error'
       x-stoplight:
         id: 6j2g1rozmitts
+  /demo:
+    get:
+      summary: demo
+      tags: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    x-stoplight:
+                      id: ca8504kcpphjd
+                  data:
+                    type: string
+                    x-stoplight:
+                      id: ninzbno9wd58s
+              examples:
+                Example 1:
+                  value:
+                    status: 'true'
+                    data: Hello
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    x-stoplight:
+                      id: 77c58bomplchs
+              examples:
+                Example 1:
+                  value:
+                    status: 'true'
+      operationId: get-demo
+      x-stoplight:
+        id: orauf3fv6d1hn
+      description: ''
+      parameters:
+        - schema:
+            type: string
+          in: header
+        - schema:
+            type: string
+          in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
 components:
   schemas:
     Pet:
