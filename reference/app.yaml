@@ -1,0 +1,430 @@
+openapi: 3.0.0
+x-stoplight:
+  id: 7yhmcfrjbubd5
+info:
+  title: app
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /app-deploy:
+    post:
+      summary: ''
+      operationId: post-app-deploy
+      responses:
+        '200':
+          $ref: '#/components/responses/app-deploy-200'
+      x-stoplight:
+        id: jed7lvwv5f9ge
+      parameters:
+        - schema:
+            type: string
+            example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJHaXRodWIuQWN0aW9ucyIsImlhdCI6MTY5MzI4NjU4OX0.KPIfG3jlZsLEs89cT0rzBU717-Mr2IZ6sbLAB2RmRcM
+          in: header
+          name: Authorization
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                version:
+                  type: string
+                changes:
+                  type: array
+                  items:
+                    type: string
+                ipa-url:
+                  type: string
+                apk-url:
+                  type: string
+              x-examples:
+                Example 1:
+                  version: 2.0.0
+                  changes:
+                    - Performance improvements & bug fixes
+                  ipa-url: 'itms-apps://apps.apple.com/in/app/pokerbaazi-online-poker/id1389802793'
+                  apk-url: 'https://mobile.alphabetabox.com/sources/staging-test/PokerBaazi-staging-test-3.10.50.apk'
+            examples:
+              Example 1:
+                value:
+                  version: 2.0.0
+                  changes:
+                    - Performance improvements & bug fixes
+                  ipa-url: 'itms-apps://apps.apple.com/in/app/pokerbaazi-online-poker/id1389802793'
+                  apk-url: 'https://mobile.alphabetabox.com/sources/staging-test/PokerBaazi-staging-test-3.10.50.apk'
+        description: ''
+      description: ''
+  /app-update:
+    get:
+      summary: ''
+      operationId: get-app-update
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  Example 1:
+                    id: 4fyDOw6TNpAyUKAQ8NNy
+                    ipa-url: 'itms-apps://apps.apple.com/in/app/pokerbaazi-online-poker/id1389802793'
+                    changes:
+                      - Performance improvements & bug fixes
+                    apk-url: 'https://mobile.alphabetabox.com/sources/staging-test/PokerBaazi-staging-test-3.10.50.apk'
+                    time: '2023-10-19T09:58:33.358Z'
+                    version: '2.0.0:required'
+                    updated-at:
+                      _seconds: 1697709513
+                      _nanoseconds: 445000000
+                    created-at:
+                      _seconds: 1697709513
+                      _nanoseconds: 445000000
+                properties:
+                  id:
+                    type: string
+                  ipa-url:
+                    type: string
+                  changes:
+                    type: array
+                    items:
+                      type: string
+                  apk-url:
+                    type: string
+                  time:
+                    type: string
+                  version:
+                    type: string
+                  updated-at:
+                    type: string
+                    format: date-time
+                  created-at:
+                    type: string
+                    format: date-time
+              examples:
+                Example 1:
+                  value:
+                    id: 4fyDOw6TNpAyUKAQ8NNy
+                    ipa-url: 'itms-apps://apps.apple.com/in/app/pokerbaazi-online-poker/id1389802793'
+                    changes:
+                      - Performance improvements & bug fixes
+                    apk-url: 'https://mobile.alphabetabox.com/sources/staging-test/PokerBaazi-staging-test-3.10.50.apk'
+                    time: '2023-10-19T09:58:33.358Z'
+                    version: '2.0.0:required'
+                    updated-at: '2019-08-24T14:15:22Z'
+                    created-at: '2019-08-24T14:15:22Z'
+        '204':
+          description: No Content
+      x-stoplight:
+        id: iphx6gkyim1zo
+      parameters:
+        - schema:
+            type: string
+            example: 1.0.0
+          in: query
+          name: version
+        - schema:
+            type: string
+            example: '2023-09-04T19:46:38.264Z'
+          in: query
+          name: updated
+      description: ''
+    parameters: []
+  /app-history-export:
+    post:
+      summary: ''
+      operationId: post-app-history-export
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                x-examples:
+                  Example 1:
+                    - id: 4fyDOw6TNpAyUKAQ8NNy
+                      ipa-url: 'itms-apps://apps.apple.com/in/app/pokerbaazi-online-poker/id1389802793'
+                      changes:
+                        - Performance improvements & bug fixes
+                      apk-url: 'https://mobile.alphabetabox.com/sources/staging-test/PokerBaazi-staging-test-3.10.50.apk'
+                      time: '2023-10-19T09:58:33.358Z'
+                      version: 2.0.0
+                      updated-at:
+                        _seconds: 1697709513
+                        _nanoseconds: 445000000
+                      created-at:
+                        _seconds: 1697709513
+                        _nanoseconds: 445000000
+                    - id: 5DuC44csVOagd8saNphk
+                      ipa-url: 'itms-apps://apps.apple.com/in/app/pokerbaazi-online-poker/id1389802793'
+                      changes:
+                        - Performance improvements & bug fixes
+                      apk-url: 'https://mobile.alphabetabox.com/sources/staging-test/PokerBaazi-staging-test-3.10.50.apk'
+                      time: '2023-09-27T12:08:42.906Z'
+                      version: 1.0.0
+                      updated-at:
+                        _seconds: 1695816523
+                        _nanoseconds: 42000000
+                      created-at:
+                        _seconds: 1695816523
+                        _nanoseconds: 42000000
+                    - id: pbFMY3hlrow3Kp39FXnP
+                      ipa-url: 'https://apps.apple.com/in/app/pokerbaazi-online-poker/id1369524104?uo=4'
+                      changes:
+                        - Performance improvements & bug fixes
+                      apk-url: 'https://play.google.com/store/apps/details?id=com.baazigames.pokerbaazi.school'
+                      time: '2023-09-22T11:08:21.793Z'
+                      version: 0.0.1
+                      updated_at:
+                        _seconds: 1695380901
+                        _nanoseconds: 880000000
+                      created_at:
+                        _seconds: 1695380901
+                        _nanoseconds: 880000000
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    ipa-url:
+                      type: string
+                    changes:
+                      type: array
+                      items:
+                        type: string
+                    apk-url:
+                      type: string
+                    time:
+                      type: string
+                    version:
+                      type: string
+                    created-at:
+                      type: string
+                      format: date-time
+                    updated_at:
+                      type: string
+                      format: date-time
+              examples:
+                Example 1:
+                  value:
+                    - id: 4fyDOw6TNpAyUKAQ8NNy
+                      ipa-url: 'itms-apps://apps.apple.com/in/app/pokerbaazi-online-poker/id1389802793'
+                      changes:
+                        - Performance improvements & bug fixes
+                      apk-url: 'https://mobile.alphabetabox.com/sources/staging-test/PokerBaazi-staging-test-3.10.50.apk'
+                      time: '2023-10-19T09:58:33.358Z'
+                      version: 2.0.0
+                      created-at: '2019-08-24T14:15:22Z'
+                      updated_at: '2019-08-24T14:15:22Z'
+                    - id: 5DuC44csVOagd8saNphk
+                      ipa-url: 'itms-apps://apps.apple.com/in/app/pokerbaazi-online-poker/id1389802793'
+                      changes:
+                        - Performance improvements & bug fixes
+                      apk-url: 'https://mobile.alphabetabox.com/sources/staging-test/PokerBaazi-staging-test-3.10.50.apk'
+                      time: '2023-09-27T12:08:42.906Z'
+                      version: 1.0.0
+                      created-at: '2019-08-24T14:15:22Z'
+                      updated_at: '2019-08-24T14:15:22Z'
+                    - id: pbFMY3hlrow3Kp39FXnP
+                      ipa-url: 'https://apps.apple.com/in/app/pokerbaazi-online-poker/id1369524104?uo=4'
+                      changes:
+                        - Performance improvements & bug fixes
+                      apk-url: 'https://play.google.com/store/apps/details?id=com.baazigames.pokerbaazi.school'
+                      time: '2023-09-22T11:08:21.793Z'
+                      version: 0.0.1
+                      created-at: '2019-08-24T14:15:22Z'
+                      updated_at: '2019-08-24T14:15:22Z'
+      x-stoplight:
+        id: vetlfavp6ovh8
+      parameters:
+        - schema:
+            type: string
+            example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJHaXRodWIuQWN0aW9ucyIsImlhdCI6MTY5MzI4NjU4OX0.KPIfG3jlZsLEs89cT0rzBU717-Mr2IZ6sbLAB2RmRcM
+          in: header
+          name: Authorization
+          required: true
+      description: ''
+      requestBody:
+        content: {}
+  /app-history-import:
+    post:
+      summary: ''
+      operationId: post-app-history-import
+      responses:
+        '200':
+          description: OK
+      x-stoplight:
+        id: jwzri70znsxwy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  version:
+                    type: string
+                  changes:
+                    type: array
+                    items:
+                      type: string
+                  ipa-url:
+                    type: string
+                  apk-url:
+                    type: string
+              x-examples:
+                Example 1:
+                  - version: 1.0.0
+                    changes:
+                      - Performance improvements & bug fixes
+                    ipa-url: 'itms-apps://apps.apple.com/in/app/pokerbaazi-online-poker/id1389802793'
+                    apk-url: 'https://mobile.alphabetabox.com/sources/staging-test/PokerBaazi-staging-test-3.10.50.apk'
+                  - version: 1.5.0
+                    changes:
+                      - Performance improvements & bug fixes
+                    ipa-url: 'itms-apps://apps.apple.com/in/app/pokerbaazi-online-poker/id1389802793'
+                    apk-url: 'https://mobile.alphabetabox.com/sources/staging-test/PokerBaazi-staging-test-3.10.50.apk'
+                  - version: 2.0.0
+                    changes:
+                      - Performance improvements & bug fixes
+                    ipa-url: 'itms-apps://apps.apple.com/in/app/pokerbaazi-online-poker/id1389802793'
+                    apk-url: 'https://mobile.alphabetabox.com/sources/staging-test/PokerBaazi-staging-test-3.10.50.apk'
+            examples:
+              Example 1:
+                value:
+                  - version: 1.0.0
+                    changes:
+                      - Performance improvements & bug fixes
+                    ipa-url: 'itms-apps://apps.apple.com/in/app/pokerbaazi-online-poker/id1389802793'
+                    apk-url: 'https://mobile.alphabetabox.com/sources/staging-test/PokerBaazi-staging-test-3.10.50.apk'
+                  - version: 1.5.0
+                    changes:
+                      - Performance improvements & bug fixes
+                    ipa-url: 'itms-apps://apps.apple.com/in/app/pokerbaazi-online-poker/id1389802793'
+                    apk-url: 'https://mobile.alphabetabox.com/sources/staging-test/PokerBaazi-staging-test-3.10.50.apk'
+                  - version: 2.0.0
+                    changes:
+                      - Performance improvements & bug fixes
+                    ipa-url: 'itms-apps://apps.apple.com/in/app/pokerbaazi-online-poker/id1389802793'
+                    apk-url: 'https://mobile.alphabetabox.com/sources/staging-test/PokerBaazi-staging-test-3.10.50.apk'
+      parameters:
+        - schema:
+            type: string
+            example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJHaXRodWIuQWN0aW9ucyIsImlhdCI6MTY5MzI4NjU4OX0.KPIfG3jlZsLEs89cT0rzBU717-Mr2IZ6sbLAB2RmRcM
+          in: header
+          name: Authorization
+          required: true
+components:
+  schemas:
+    User:
+      title: User
+      type: object
+      x-examples:
+        Alice Smith:
+          id: 142
+          firstName: Alice
+          lastName: Smith
+          email: alice.smith@gmail.com
+          dateOfBirth: '1997-10-31'
+          emailVerified: true
+          signUpDate: '2019-08-24'
+      x-stoplight:
+        id: b1uhvlfr2wq83
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the given user.
+          x-stoplight:
+            id: g83at6vh6aar8
+        status:
+          x-stoplight:
+            id: 5ptjcheiyor00
+          enum:
+            - active
+            - inactive
+            - unverified
+            - 2fa-setup
+        secret-key:
+          type: string
+          x-stoplight:
+            id: rv7lqb02hti07
+        email:
+          type: string
+          x-stoplight:
+            id: 9wd3rvm0hf983
+          format: email
+        password:
+          type: string
+          x-stoplight:
+            id: eqspia717cpdl
+          format: password
+        created-at:
+          type: string
+          x-stoplight:
+            id: ifibfjua212ql
+          format: date-time
+        updated-at:
+          type: string
+          x-stoplight:
+            id: s8xsy70s6yje6
+          format: date-time
+      required:
+        - id
+        - status
+        - created-at
+        - updated-at
+    Update:
+      title: Update
+      x-stoplight:
+        id: 2q2b47jds04xc
+      type: object
+      properties:
+        id:
+          type: string
+          x-stoplight:
+            id: mb0gfw0om5k4x
+        time:
+          type: string
+          x-stoplight:
+            id: 2n9ejzbe7rbth
+          format: date-time
+        version:
+          type: string
+          x-stoplight:
+            id: baf9k9jxtnnfg
+        changes:
+          type: array
+          x-stoplight:
+            id: dhl1ikg6fj4kx
+          items:
+            x-stoplight:
+              id: kbhakoqu3flp4
+            type: string
+        ipa_url:
+          type: string
+          x-stoplight:
+            id: edeus5jpulnxq
+        apk_url:
+          type: string
+          x-stoplight:
+            id: 6g1pp10wpv2i5
+        created-at:
+          type: string
+          x-stoplight:
+            id: tjrfam9vl59hp
+          format: date-time
+        updated-at:
+          type: string
+          x-stoplight:
+            id: fshifnxlf6941
+          format: date-time
+      required:
+        - id
+        - time
+        - version
+  responses: {}
+  requestBodies: {}
